@@ -34,6 +34,7 @@ object ServerApp extends App {
       case POST(p"/$_*") =>
         Action(parse.json[ArenaUpdate]) { request =>
           println(request.body)
+          // TODO add your implementation here to replace the random response
           Results.Ok(Random.shuffle(Seq("F", "R", "L", "T")).head)
         }
     }
